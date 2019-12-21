@@ -1,6 +1,7 @@
 package com.cy.pd.stock.controller;
 import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -29,5 +30,13 @@ public class PageController {
 		public String doPageUI() {
 			return "common/page";
 		}
+		
+		//提取共性代码进行优化,登录子页面的优化方案
+		//rest风格的URL映射
+		//@PathVariable用于告诉spring mvc 参数值从url中获取	
+	/*
+	 * @RequestMapping("{module}/{moduleUI}") public String doModuleUI(@PathVariable
+	 * String moduleUI) { return "pd/"+moduleUI; }
+	 */
 
 }
